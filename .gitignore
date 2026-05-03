@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+node_modules/
+.env
+.env.local
+
+# local-only verification artifacts (not part of the public site)
+_verify_local.py
+_dev_screenshot.png
+_pages_screenshot.png

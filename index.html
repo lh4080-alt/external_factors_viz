@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>External Factors Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>External Factors Dashboard</h1>
+    <div id="as-of">loading…</div>
+  </header>
+
+  <main>
+    <section id="block-timeseries">
+      <h2>섹터 추이 (Rebase 100)</h2>
+      <div class="controls">
+        <div class="period-toggle">
+          <button data-period="1M">1M</button>
+          <button data-period="3M">3M</button>
+          <button data-period="6M">6M</button>
+          <button data-period="1Y" class="active">1Y</button>
+          <button data-period="YTD">YTD</button>
+        </div>
+        <label><input type="checkbox" id="ema5-toggle"> EMA5</label>
+        <label><input type="checkbox" id="ema20-toggle"> EMA20</label>
+      </div>
+      <div id="chart-timeseries" style="height: 480px;"></div>
+    </section>
+
+    <section id="block-heatmap">
+      <h2>섹터 히트맵 (등락률 %)</h2>
+      <div id="chart-heatmap" style="height: 720px;"></div>
+    </section>
+
+    <section id="block-ranking">
+      <h2>z-score 랭킹</h2>
+      <div class="ranking-grid">
+        <div id="ranking-top"></div>
+        <div id="ranking-bottom"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Updated daily after Korean market close. Data: Phase B macro strength signals.
+  </footer>
+
+  <script src="js/utils/rebase.js"></script>
+  <script src="js/utils/date_filter.js"></script>
+  <script src="js/chart_timeseries.js"></script>
+  <script src="js/chart_heatmap.js"></script>
+  <script src="js/chart_ranking.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
